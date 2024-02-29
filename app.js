@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 const regexName = /^[A-Za-z]+$/;
 const regexDateOfBirth = /^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-\d{4}$/;
 const regexPhoneNumber = /^\+\d{10,15}$/;
@@ -15,6 +16,8 @@ function validateField(fieldId, regex, errorMessage) {
         errorElement.innerText = errorMessage;
     }
 }
+=======
+>>>>>>> f62764cf410fddc3c5376615db53aa46db1e6157
 
 function validateForm() {
     validateField('name', regexName, "Inserire un nome valido.");
@@ -27,6 +30,7 @@ function validateForm() {
 }
 
 function submitForm() {
+<<<<<<< HEAD
     validateForm();
     var errorElements = document.querySelectorAll('.error-message');
     var hasErrors = Array.from(errorElements).some(element => element.innerText !== "");
@@ -34,7 +38,25 @@ function submitForm() {
     if (!hasErrors) {
         // Invia il form o esegui altre azioni necessarie
         alert("Form inviato con successo!");
+=======
+    // Ottenere l'input dell'età e l'elemento di errore
+    var ageInput = document.getElementById('age');
+    var ageError = document.getElementById('ageError');
+  
+    // Creare la regex per l'età
+    var ageRegex = /^(100|[1-9][0-9]?)$/;
+  
+    // Verificare se l'input dell'età corrisponde alla regex
+    if (ageRegex.test(ageInput.value)) {
+      // Se l'input è valido, rimuovere l'errore
+      ageError.textContent = '';
+>>>>>>> f62764cf410fddc3c5376615db53aa46db1e6157
     } else {
-        alert("Il form contiene errori. Per favore, correggi gli errori.");
+      // Se l'input non è valido, mostrare un messaggio di errore
+      ageError.textContent = 'Per favore, inserisci un\'età valida tra 1 e 100.';
     }
+<<<<<<< HEAD
 }
+=======
+  }
+>>>>>>> f62764cf410fddc3c5376615db53aa46db1e6157
